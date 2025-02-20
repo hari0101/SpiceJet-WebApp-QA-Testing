@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="3" name="SpiceJet" verbose="5">
+  
+  	
+ <listeners>
+		<listener class-name="listeners.TestListener"></listener>
+		<listener class-name="listeners.IAnnotationTransform"></listener>
+	</listeners> 
+  
+  <test name="SpiceJetTestCHROME">
+    <parameter name="Machine" value="Localhost"></parameter>
+   	<parameter name="OS" value="Windows"></parameter>
+   	<parameter name="Browser" value="chrome"></parameter>
+    
+    <groups>
+		<run>
+			<include name="Driver_checkin"></include>	
+			<include name="Driver_checkout"></include>	
+			<include name="SmokeTest"></include>
+		</run>
+	</groups>
+    
+    <classes>
+      <class name="testExecution.FlightSelectionTest"/>
+      <class name="testExecution.CreatAccountTest"></class>
+      <class name="testExecution.LoginTest"></class>
+    </classes>
+  </test>
+  
+  <test name="SpiceJetTestEDGE">
+    <parameter name="Machine" value="Localhost"></parameter>
+   	<parameter name="OS" value="Windows"></parameter>
+   	<parameter name="Browser" value="Edge"></parameter>
+    
+    <groups>
+		<run>
+			<include name="Driver_checkin"></include>	
+			<include name="Driver_checkout"></include>	
+			<include name="SmokeTest"></include>
+		</run>
+	</groups>
+    
+    <classes>
+      <class name="testExecution.FlightSelectionTest"/>
+      <class name="testExecution.CreatAccountTest"></class>
+      <class name="testExecution.LoginTest"></class>
+    </classes>
+  </test> 
+   <test name="SpiceJetTestFIREFOX">
+    <parameter name="Machine" value="Localhost"></parameter>
+   	<parameter name="OS" value="Windows"></parameter>
+   	<parameter name="Browser" value="FireFox"></parameter>
+    
+    <groups>
+		<run>
+			<include name="Driver_checkin"></include>	
+			<include name="Driver_checkout"></include>	
+			<include name="SmokeTest"></include>
+		</run>
+	</groups>
+    
+    <classes>
+      <class name="testExecution.FlightSelectionTest"/>
+      <class name="testExecution.CreatAccountTest"></class>
+      <class name="testExecution.LoginTest"></class>
+    </classes>
+  </test> 
+</suite> <!-- SpiceJet -->
